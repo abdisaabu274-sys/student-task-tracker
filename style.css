@@ -1,0 +1,109 @@
+/* 1. general page styling */
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body{
+  font-family: Arial, sans-serif;
+  background-color: #f4f6fb;
+  color: #263247;
+  max-height: 100vh;
+  padding: 30px 20px;
+}
+
+/* 2. header styling */
+header{
+  text-align: center;
+  margin-bottom: 35px;
+}
+header h1{
+  color: #4f46e5;
+  text-transform: capitalize;
+  font-size: 32px;
+  margin-bottom: 10px;
+}
+header p{
+  color: #64748b;
+  font-size: 16px;
+}
+
+/* 3. main content */
+main{
+  max-width: 650px;
+  margin: 0 auto;
+}
+
+/* 4. task input section */
+.task-input{
+  background-color: white;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.06);
+  margin-bottom: 25px;
+}
+.task-input h2,
+.task-list h2{
+  font-size: 20px;
+  margin-bottom: 18px;
+}
+
+/* 5. input feild */
+#taskInput{
+  width: 100%;
+  padding: 25px;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  outline: none;
+  margin-bottom: 15px;
+}
+#taskInput:focus{
+  border-color: #4f46e5;
+}
+
+/* 6. add task button */
+#addTaskBtn{
+  width: 100%;
+  padding: 13px;
+  background-color: #4f46e5;
+  color: white;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+#addTaskBtn:hover{
+  background-color: #3730a3;
+}
+
+/* 7.task list secction */
+.task-list{
+  background-color: white;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.06);
+}
+
+/* 8. individual task items */
+#tasklist{
+  padding: 15px;
+  background-color: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+
+/* 9. responsive design */
+@media(max-width: 480px){
+  body{
+    padding: 20px 12px;
+  }
+  header h1{
+    font-size: 25px;
+  }
+
+  .task-input,
+  .task-list{
+    padding: 18px;
+  }
+}
