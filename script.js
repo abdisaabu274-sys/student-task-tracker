@@ -6,6 +6,7 @@ const tasklist=document.getElementById("tasklist");
 const totaltasks=document.getElementById("totaltasks");
 const completedtasks=document.getElementById("completedtasks");
 const pendingtasks=document.getElementById("pendingtasks");
+const clearCompleteBtn=document.getElementById("clearCompleteBtn");
 
 //2. create an array to store the tasks
 // const tasks=[];
@@ -131,4 +132,17 @@ taskInput.addEventListener("keydown", function(event){
   if(event.key==="Enter"){
     addTaskBtn.click();
   }
-})
+});
+
+// clearr complete brn
+clearCompleteBtn.addEventListener("click", function(){
+  const remainingTasks=tasks.filter(function(task){
+    return !task.completed;
+  });
+
+  tasks.length=0;
+  tasks.push(...remainingTasks);
+
+  saveTasks();
+  renderTasks();
+});

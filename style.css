@@ -159,3 +159,17 @@ main{
 #tasklist li input{
   cursor: pointer;
 }
+
+/* improve clear button apperance */
+#clearCompleteBtn{
+  background-color: #64748b;
+  color: white;
+  border: none;
+  padding: 10px 15px; /*top & butom  left & right */
+  border-radius: 6px;
+  cursor: pointer;
+  margin-bottom: 15px;
+}
+#clearCompleteBtn:hover{
+  background-color: #475569;
+}
