@@ -8,7 +8,17 @@ const completedtasks=document.getElementById("completedtasks");
 const pendingtasks=document.getElementById("pendingtasks");
 
 //2. create an array to store the tasks
-const tasks=[];
+// const tasks=[];
+
+// this checks wether tasks were previuosly saved. if they exist, it loads them , otherwise, it creates an empty array
+const savedTasks=localStorage.getItem("tasks");
+const tasks=savedTasks? JSON.parse(savedTasks):[];
+
+// create a save function
+
+function saveTasks(){
+  localStorage.setItem("tasks",JSON.stringify(tasks));
+}
 
 // 3.function to display the tasks
 function renderTasks(){
@@ -40,9 +50,10 @@ function renderTasks(){
     const deleteBtn=document.createElement("button");
     deleteBtn.textContent="delete";
 
-    // handle the task compliition
+    // handle the task completion
     checkbox.addEventListener("change",function(){
       task.completed=checkbox.checked;
+      saveTasks();
       renderTasks();
     });
 
@@ -55,6 +66,7 @@ function renderTasks(){
       tasks.length=0;
       tasks.push(...updatetasks);
 
+      saveTasks();
       renderTasks();
 
     });
@@ -104,7 +116,19 @@ addTaskBtn.addEventListener("click", function(){
   };
 
   tasks.push(newTask);
+  saveTasks();
+
   taskInput.value="";
   renderTasks();
 
 })
+
+// this loads and displays saved tasks whenever the page opens
+renderTasks();
+
+// // add tasks using enter
+// taskInput.addEventListener("keydown", function(event){
+//   if(event.key==="Enter"){
+//     addTaskBtn.click();
+//   }
+// })
