@@ -126,9 +126,9 @@ addTaskBtn.addEventListener("click", function(){
 // this loads and displays saved tasks whenever the page opens
 renderTasks();
 
-// // add tasks using enter
-// taskInput.addEventListener("keydown", function(event){
-//   if(event.key==="Enter"){
-//     addTaskBtn.click();
-//   }
-// })
+// add tasks using enter
+taskInput.addEventListener("keydown", function(event){
+  if(event.key==="Enter"){
+    addTaskBtn.click();
+  }
+})
