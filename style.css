@@ -107,3 +107,55 @@ main{
     padding: 18px;
   }
 }
+
+.task-stats{
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  background-color: white;
+  padding: 18px;
+  border-radius: 12px;
+  margin-bottom: 25px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.06);
+}
+.task-stats p{
+  font-size: 14px;
+}
+
+/* individual task layout */
+#tasklist li{
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+/* task text */
+#tasklist li span{
+  flex: 1;
+  overflow-wrap: anywhere;
+}
+
+/* comlleted task */
+.completed{
+  text-decoration: line-through;
+  color: #944ab8;
+}
+
+/* delete button */
+#tasklist li button{
+  background-color: #ef4444;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+#tasklist li button:hover{
+  background-color: #b91c1c;
+}
+
+/* checkbox */
+#tasklist li input{
+  cursor: pointer;
+}
